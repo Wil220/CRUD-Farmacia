@@ -20,48 +20,50 @@ import jakarta.validation.constraints.Size;
 @Table(name = "tb_categorias")
 public class Categoria {
 
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private long id;
-	
-	@NotNull(message = "O Atributo Nome é Obrigatório!")
-	private String nome;
-	
-	@NotBlank(message = "O atributo descrição é obrigatorio!")
-	@Size(min = 50, max = 255, message = "O atraibuto descrição deve conter no minumo 50 e no máximo 255 caracteres")
-	private String descricao;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private long id;
 
-	public long getId() {
-		return id;
-	}
-	public void setId(long id) {
-		this.id = id;
-	}
-	
-	  public @NotBlank(message = "O atributo nome é Obrigatório!") String getName() {
-	        return nome;
-	    }
-	  
-	   public void setName(@NotBlank(message = "O atributo nome é Obrigatório!") String name) {
-	        this.nome = name;
-	   }
-	   
-	    public @NotBlank(message = "O atributo descrição é Obrigatório!") String getDescription() {
-	        return descricao;
-	    }
+    @NotNull(message = "O Atributo Nome é Obrigatório!")
+    private String nome;
 
-	    public void setDescription(@NotBlank(message = "O atributo descrição é Obrigatório!") String description, @NotBlank(message = "O atributo descrição é obrigatorio!") @Size(min = 50, max = 255, message = "O atraibuto descrição deve conter no minumo 50 e no máximo 255 caracteres") String descricao) {
-	        this.descricao = descricao;
+    @NotBlank(message = "O atributo descrição é obrigatorio!")
+    @Size(min = 10, max = 255, message = "O atraibuto descrição deve conter no minumo 50 e no máximo 255 caracteres")
+    private String descricao;
+
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "categoria", cascade = CascadeType.REMOVE)
+    @JsonIgnoreProperties("categoria")
+    private List<Produto> produto;
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public String getDescricao() {
+        return descricao;
+    }
+
+    public void setDescricao(String descricao) {
+        this.descricao = descricao;
+    }
+
+    public List<Produto> getProduto() {
+        return produto;
+    }
+
+    public void setProduto(List<Produto> produto) {
+        this.produto = produto;
+    }
 }
-	    @OneToMany(fetch = FetchType.LAZY ,mappedBy = "categoria", cascade = CascadeType.REMOVE)
-	    @JsonIgnoreProperties("categoria")
-	    private List<Produto> produto;
-
-	    public List<Produto> getProduto() {
-	        return produto;
-	    }
-
-	    public void setProduto(List<Produto> produto) {
-	        this.produto = produto;
-	    }
-	}
