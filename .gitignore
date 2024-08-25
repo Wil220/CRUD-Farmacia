@@ -3,6 +3,13 @@ target/
 !.mvn/wrapper/maven-wrapper.jar
 !**/src/main/**/target/
 !**/src/test/**/target/
+.metadata/.plugins/com.genuitec.eclipse.ui.common.platform/splash-fix.css
+.metadata/.plugins/com.genuitec.eclipse.ui.common.platform/color-definitions-fix.css
+.metadata/.plugins/com.genuitec.eclipse.ui.common.platform/colors-org.eclipse.jdt.ui-326703266.css
+.metadata/.plugins/com.genuitec.eclipse.ui.common.platform/colors-org.eclipse.buildship.ui-1231266899.css
+.metadata/.plugins/com.genuitec.eclipse.ui.common.platform/colors-org.eclipse.epp.mpc.ui.css--1027399938.css
+.metadata/.plugins/com.genuitec.eclipse.ui.common.platform/colors-org.eclipse.egit.ui-1849137576.css
+
 
 ### STS ###
 .apt_generated
@@ -13,6 +20,7 @@ target/
 .springBeans
 .sts4-cache
 .metadata
+
 
 ### IntelliJ IDEA ###
 .idea
