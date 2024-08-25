@@ -20,6 +20,12 @@ target/
 .springBeans
 .sts4-cache
 .metadata
+.metadata/.plugins/com.genuitec.eclipse.ui.common.platform/splash-fix.css
+.metadata/.plugins/com.genuitec.eclipse.ui.common.platform/color-definitions-fix.css
+.metadata/.plugins/com.genuitec.eclipse.ui.common.platform/colors-org.eclipse.jdt.ui-326703266.css
+.metadata/.plugins/com.genuitec.eclipse.ui.common.platform/colors-org.eclipse.buildship.ui-1231266899.css
+.metadata/.plugins/com.genuitec.eclipse.ui.common.platform/colors-org.eclipse.epp.mpc.ui.css--1027399938.css
+.metadata/.plugins/com.genuitec.eclipse.ui.common.platform/colors-org.eclipse.egit.ui-1849137576.css
 
 
 ### IntelliJ IDEA ###
